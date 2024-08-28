@@ -29,7 +29,7 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
     alert(
-      `Your choice - ${humanChoice}, computer choice - ${computerChoice}.  DRAW!`
+      `Your choice - ${humanChoice}, computer choice - ${computerChoice} - DRAW!, [H: ${humanScore} | C: ${computerScore}]`
     );
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -38,12 +38,12 @@ function playRound(humanChoice, computerChoice) {
   ) {
     humanScore++;
     alert(
-      `Your choice - ${humanChoice}, computer choice - ${computerChoice}.  YOU WIN!`
+      `Your choice - ${humanChoice}, computer choice - ${computerChoice} - YOU WIN!,  [H: ${humanScore} | C: ${computerScore}]`
     );
   } else {
     computerScore++;
     alert(
-      `Your choice - ${humanChoice}, computer choice - ${computerChoice}. COMPUTER WINS!`
+      `Your choice - ${humanChoice}, computer choice - ${computerChoice} - COMPUTER WINS!,  [H: ${humanScore} | C: ${computerScore}]`
     );
   }
 }
@@ -70,7 +70,7 @@ function playGame() {
   if (playAgain === true) {
     humanScore = 0;
     computerScore = 0;
-    playGame();
+    return playGame();
   }
 }
 
