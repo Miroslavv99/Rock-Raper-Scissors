@@ -49,7 +49,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-  while (humanScore < round && computerScore < round) {
+  for (let i = 0; i < round; i++) {
     playRound(getHumanChoice(), getComputerChoice());
   }
 
