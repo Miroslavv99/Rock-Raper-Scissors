@@ -48,30 +48,32 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
-  for (let i = 0; i < round; i++) {
-    playRound(getHumanChoice(), getComputerChoice());
-  }
+// function playGame() {
+//   for (let i = 0; i < round; i++) {
+//     let humanSelection = getHumanChoice();
+//     let computerSelection = getComputerChoice();
+//     playRound(humanSelection, computerSelection);
+//   }
 
-  if (humanScore > computerScore) {
-    alert(
-      `You have ${humanScore}, computer has ${computerScore}, YOU WIN THIS GAME!`
-    );
-  } else if (humanScore === computerScore) {
-    alert(`You have ${humanScore}, computer has ${computerScore}, IT's DRAW!`);
-  } else {
-    alert(
-      `You have ${humanScore}, computer has ${computerScore}, COMPUTER WIN THIS GAME!`
-    );
-  }
+//   if (humanScore > computerScore) {
+//     alert(
+//       `You have ${humanScore}, computer has ${computerScore}, YOU WIN THIS GAME!`
+//     );
+//   } else if (humanScore === computerScore) {
+//     alert(`You have ${humanScore}, computer has ${computerScore}, IT's DRAW!`);
+//   } else {
+//     alert(
+//       `You have ${humanScore}, computer has ${computerScore}, COMPUTER WIN THIS GAME!`
+//     );
+//   }
 
-  let playAgain = confirm("Do you want to play again?");
+//   let playAgain = confirm("Do you want to play again?");
 
-  if (playAgain === true) {
-    humanScore = 0;
-    computerScore = 0;
-    return playGame();
-  }
-}
+//   if (playAgain === true) {
+//     humanScore = 0;
+//     computerScore = 0;
+//     return playGame();
+//   }
+// }
 
-playGame();
+// playGame();
