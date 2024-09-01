@@ -20,18 +20,42 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+  let resultMessage;
   if (humanChoice === computerChoice) {
-    scoreDiv.textContent = `Your choice - ${humanChoice}, computer choice - ${computerChoice} - DRAW!, [H: ${humanScore} | C: ${computerScore}]`;
+    resultMessage = `Your choice - ${humanChoice}, computer choice - ${computerChoice} - DRAW!, [H: ${humanScore} | C: ${computerScore}]`;
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "scissors" && computerChoice === "paper") ||
     (humanChoice === "paper" && computerChoice === "rock")
   ) {
     humanScore++;
-    scoreDiv.textContent = `Your choice - ${humanChoice}, computer choice - ${computerChoice} - YOU WIN!,  [H: ${humanScore} | C: ${computerScore}]`;
+    resultMessage = `Your choice - ${humanChoice} <br>computer choice - ${computerChoice} - YOU WIN!,  [H: ${humanScore} | C: ${computerScore}]`;
   } else {
     computerScore++;
-    scoreDiv.textContent = `Your choice - ${humanChoice}, computer choice - ${computerChoice} - COMPUTER WINS!,  [H: ${humanScore} | C: ${computerScore}]`;
+    resultMessage = `Your choice - ${humanChoice} <br>computer choice - ${computerChoice} - COMPUTER WINS!,  [H: ${humanScore} | C: ${computerScore}]`;
+  }
+
+  scoreDiv.innerHTML = resultMessage;
+
+  if (computerScore === 5 || humanScore === 5) {
+    if (computerScore > humanScore) {
+      scoreDiv.innerHTML =
+        "You Lose!<br>" + `You: ${humanScore}, Computer: ${computerScore}`;
+      scoreDiv.style.backgroundColor = "#760f1d";
+    } else {
+      scoreDiv.innerHTML =
+        "You Win! <br>" +
+        "" +
+        `You: ${humanScore}, Computer: ${computerScore} `;
+      scoreDiv.style.backgroundColor = "#0f766e";
+    }
+    let playAgain = confirm("Do you want to play again?");
+
+    if (playAgain === true) {
+      humanScore = 0;
+      computerScore = 0;
+      return playRound;
+    }
   }
 }
 
@@ -44,6 +68,11 @@ paperButton.addEventListener("click", () =>
 scissorsButton.addEventListener("click", () =>
   playRound("scissors", getComputerChoice())
 );
+
+function getGreen() {
+  if (humanScore === 5) {
+  }
+}
 
 // function playGame() {
 //   for (let i = 0; i < round; i++) {
