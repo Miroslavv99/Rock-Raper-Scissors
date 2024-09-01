@@ -1,0 +1,42 @@
+.button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  height: 300px;
+  width: 800px;
+  gap: 24px;
+}
+
+#score {
+  height: 200px;
+  width: 400px;
+  border: 1px solid black;
+}
+
+#title {
+  font-family: Roboto;
+  font-weight: bold;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-family: Roboto;
+  width: 150px;
+  height: 70px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
