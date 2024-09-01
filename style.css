@@ -2,21 +2,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-  height: 300px;
+  border: 0.2px solid black;
+  height: 150px;
   width: 800px;
   gap: 24px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 #score {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
   height: 200px;
   width: 400px;
-  border: 1px solid black;
+  font-size: 24px;
+  border: 0.2px solid rgb(0, 0, 0);
+  font-weight: bold;
+  font-family: Roboto;
+  white-space: normal;
+  border-radius: 12px;
+  margin-top: 24px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 #title {
   font-family: Roboto;
   font-weight: bold;
+  color: white;
 }
 
 body {
@@ -26,10 +41,13 @@ body {
   width: 100%;
   justify-content: center;
   flex-direction: column;
+  gap: 12px;
+  background-color: #2f4463;
 }
 
 button {
-  background-color: black;
+  background-color: rgb(99, 99, 99);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
   color: white;
   text-decoration: none;
   font-family: Roboto;
@@ -39,4 +57,15 @@ button {
   font-weight: bold;
   font-size: 24px;
   cursor: pointer;
+  outline: none;
+  appearance: none;
+  border: 1px solid black;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+button:focus {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
