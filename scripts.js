@@ -2,6 +2,11 @@ let round = 5;
 let computerScore = 0;
 let humanScore = 0;
 
+const rockButton = document.getElementById("rock");
+const paperButton = document.getElementById("paper");
+const scissorsButton = document.getElementById("scissors");
+const scoreDiv = document.getElementById("score");
+
 function getComputerChoice() {
   let choice = Math.random();
 
@@ -14,39 +19,31 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  const enter = prompt(
-    'Please enter your choice: "Rock", "Paper", "Scissors"'
-  ).toLowerCase();
-  if (enter === "rock" || enter === "paper" || enter === "scissors") {
-    return enter;
-  } else {
-    alert("Please enter right choice!!!");
-    return getHumanChoice();
-  }
-}
-
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
-    alert(
-      `Your choice - ${humanChoice}, computer choice - ${computerChoice} - DRAW!, [H: ${humanScore} | C: ${computerScore}]`
-    );
+    scoreDiv.textContent = `Your choice - ${humanChoice}, computer choice - ${computerChoice} - DRAW!, [H: ${humanScore} | C: ${computerScore}]`;
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "scissors" && computerChoice === "paper") ||
     (humanChoice === "paper" && computerChoice === "rock")
   ) {
     humanScore++;
-    alert(
-      `Your choice - ${humanChoice}, computer choice - ${computerChoice} - YOU WIN!,  [H: ${humanScore} | C: ${computerScore}]`
-    );
+    scoreDiv.textContent = `Your choice - ${humanChoice}, computer choice - ${computerChoice} - YOU WIN!,  [H: ${humanScore} | C: ${computerScore}]`;
   } else {
     computerScore++;
-    alert(
-      `Your choice - ${humanChoice}, computer choice - ${computerChoice} - COMPUTER WINS!,  [H: ${humanScore} | C: ${computerScore}]`
-    );
+    scoreDiv.textContent = `Your choice - ${humanChoice}, computer choice - ${computerChoice} - COMPUTER WINS!,  [H: ${humanScore} | C: ${computerScore}]`;
   }
 }
+
+rockButton.addEventListener("click", () =>
+  playRound("rock", getComputerChoice())
+);
+paperButton.addEventListener("click", () =>
+  playRound("paper", getComputerChoice())
+);
+scissorsButton.addEventListener("click", () =>
+  playRound("scissors", getComputerChoice())
+);
 
 // function playGame() {
 //   for (let i = 0; i < round; i++) {
