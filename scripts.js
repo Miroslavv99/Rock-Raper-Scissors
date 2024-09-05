@@ -51,7 +51,9 @@ function playRound(humanChoice, computerChoice) {
       scoreDiv.style.backgroundColor = "#0f766e";
     }
 
-    if (computerScore === 5 || humanScore === 5) {
+    if (computerScore >= 5 || humanScore >= 5) {
+      humanScore = 0;
+      computerScore = 0;
       alert("Result is Ready, please click to play again button");
     }
     againButton.addEventListener("click", () => {
