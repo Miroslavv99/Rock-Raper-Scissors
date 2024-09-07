@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.2px solid black;
+  background-color: #59ff00;
   height: 150px;
   width: 800px;
   gap: 24px;
@@ -18,20 +18,21 @@
   height: 200px;
   width: 400px;
   font-size: 24px;
-  border: 0.2px solid rgb(0, 0, 0);
+  background-color: #59ff00;
+
   font-weight: bold;
   font-family: Roboto;
   white-space: normal;
   border-radius: 12px;
   margin-top: 24px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 #title {
   font-family: Roboto;
   font-weight: bold;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 body {
@@ -42,11 +43,14 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 12px;
-  background-color: #2f4463;
+  background-color: #ffffff;
 }
 
 button {
-  background-color: rgb(99, 99, 99);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(90, 90, 90);
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
   color: white;
   text-decoration: none;
@@ -59,13 +63,9 @@ button {
   cursor: pointer;
   outline: none;
   appearance: none;
-  border: 1px solid black;
+  border: none;
 }
 
 button:active {
-  box-shadow: none;
-}
-
-button:focus {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
 }
