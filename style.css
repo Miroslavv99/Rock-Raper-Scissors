@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #59ff00;
+  background-color: #000000;
   height: 150px;
   width: 800px;
   gap: 24px;
@@ -18,7 +18,7 @@
   height: 200px;
   width: 400px;
   font-size: 24px;
-  background-color: #59ff00;
+  background-color: #ffffff;
 
   font-weight: bold;
   font-family: Roboto;
