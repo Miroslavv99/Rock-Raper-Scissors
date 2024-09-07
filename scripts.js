@@ -51,16 +51,31 @@ function playRound(humanChoice, computerChoice) {
       scoreDiv.style.backgroundColor = "#0f766e";
     }
 
+    disabledButton();
+
     if (computerScore >= 5 || humanScore >= 5) {
       humanScore = 0;
       computerScore = 0;
-      alert("Result is Ready, please click to play again button");
     }
+
+    function disabledButton() {
+      rockButton.disabled = true;
+      paperButton.disabled = true;
+      scissorsButton.disabled = true;
+    }
+
+    function enableButton() {
+      rockButton.disabled = false;
+      paperButton.disabled = false;
+      scissorsButton.disabled = false;
+    }
+
     againButton.addEventListener("click", () => {
       humanScore = 0;
       computerScore = 0;
       scoreDiv.style.backgroundColor = "";
-      playRound("nothing", "nothing");
+      scoreDiv.innerHTML = "Start the Game!";
+      enableButton();
     });
   }
 }
