@@ -42,13 +42,13 @@ function playRound(humanChoice, computerChoice) {
       scoreDiv.innerHTML =
         "YOU LOSE! <br>" +
         `Your Score: ${humanScore} ||  Computer Score: ${computerScore}`;
-      scoreDiv.style.backgroundColor = "#760f1d";
+      scoreDiv.style.backgroundColor = "#980000";
     } else {
       scoreDiv.innerHTML =
         "YOU WIN! <br>" +
         "" +
         `Yor Score: ${humanScore} || Computer Score: ${computerScore} `;
-      scoreDiv.style.backgroundColor = "#0f766e";
+      scoreDiv.style.backgroundColor = "#59ff00";
     }
 
     disabledButton();
